@@ -1,5 +1,5 @@
 import './App.css';
-import Viewer from "./map/Viewer";
+import Viewer from "./viewer/Viewer";
 
 
 function App() {
