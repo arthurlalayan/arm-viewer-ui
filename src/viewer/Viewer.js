@@ -35,6 +35,7 @@ class Viewer extends React.Component {
 	</div>;
 
 	render() {
+		// this.props.product; todo AL
 		return (this.element);
 	}
 
