@@ -1,17 +1,7 @@
-import './App.css';
 import React from "react";
-import ViewerSidebar from "./sidebar/ViewerSidebar";
+import './App.css';
+import ViewerSidebar from "./features/sidebar/ViewerSidebar";
 
-class App extends React.Component {
-
-	render() {
-		return (
-			<ViewerSidebar/>
-			// <div className="App">
-			// 	<Viewer center={[40.1, 45]} zoom={8}/>
-			// </div>
-		);
-	}
+export default function App() {
+	return <ViewerSidebar />;
 }
-
-export default App;

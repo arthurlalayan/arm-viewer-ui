@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 const styles = {
 	root: {
@@ -15,15 +15,6 @@ const styles = {
 	}
 };
 
-const MaterialTitlePanel = props => {
-	const rootStyle = props.style ? {...styles.root, ...props.style} : styles.root;
-	return (
-		<div style={rootStyle}>
-			<div style={styles.header}>{props.title}</div>
-			{props.children}
-		</div>
-	);
-};
 
 MaterialTitlePanel.propTypes = {
 	style: PropTypes.object,
@@ -31,4 +22,12 @@ MaterialTitlePanel.propTypes = {
 	children: PropTypes.object
 };
 
-export default MaterialTitlePanel;
+export default function MaterialTitlePanel(props) {
+	const rootStyle = props.style ? { ...styles.root, ...props.style } : styles.root;
+	return (
+		<div style={rootStyle}>
+			<div style={styles.header}>{props.title}</div>
+			{props.children}
+		</div>
+	);
+};
