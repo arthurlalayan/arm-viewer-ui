@@ -15,7 +15,6 @@ const styles = {
 	}
 };
 
-
 MaterialTitlePanel.propTypes = {
 	style: PropTypes.object,
 	title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),

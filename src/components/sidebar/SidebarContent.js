@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { useDispatch } from "react-redux";
-import { changeProduct } from "../sidebarSlice";
+import Products from "../../components/products/Products";
 import MaterialTitlePanel from "./MaterialTitlePanel";
 
 const styles = {
@@ -32,19 +31,12 @@ SidebarContent.propTypes = {
 };
 
 export default function SidebarContent(props) {
-	const dispatch = useDispatch();
 	const style = props.style ? { ...styles.sidebar, ...props.style } : styles.sidebar;
 	return (
 		<MaterialTitlePanel title="Menu" style={style}>
 			<div style={styles.content}>
-				<span style={styles.sidebarLink}>
-					Products
-				</span>
-				<div>
-					<button onClick={() => dispatch(changeProduct({product: 1}))}>1</button>
-				</div>
-				<button onClick={() => dispatch(changeProduct({product: 2}))}>2</button>
-				<div style={styles.divider} />
+				<Products />
+				{/* <div style={styles.divider} /> */}
 			</div>
 		</MaterialTitlePanel>
 	);

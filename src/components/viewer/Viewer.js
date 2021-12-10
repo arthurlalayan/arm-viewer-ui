@@ -4,7 +4,6 @@ import { LayersControl, MapContainer, TileLayer } from "react-leaflet";
 import './Viewer.css';
 
 export default function Viewer(props) {
-	// props.product; todo AL
 	return (
 		<div className="Viewer">
 			<MapContainer center={props.center} zoom={props.zoom}>

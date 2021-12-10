@@ -1,7 +1,9 @@
 import React from "react";
 import './App.css';
-import ViewerSidebar from "./features/sidebar/ViewerSidebar";
+import Shell from "./components/shell";
 
 export default function App() {
-	return <ViewerSidebar />;
+	return (
+		<Shell />
+	);
 }

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    product: null, // todo AL
+    product: null,
     docked: true,
     open: true,
     transitions: true,
@@ -24,7 +24,6 @@ export const sidebarSlice = createSlice({
 
 export const selectProduct = (state) => state.sidebarReducer.product;
 export const selectDocked = (state) => state.sidebarReducer.docked;
-
 export const { changeProduct } = sidebarSlice.actions
 
 export default sidebarSlice.reducer
