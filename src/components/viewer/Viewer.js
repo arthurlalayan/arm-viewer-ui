@@ -20,21 +20,13 @@ export default function Viewer(props) {
 				<LayersControl position="topright">
 					{mapConfigs.map(config => {
 						return (
-							config.key === 1
-								? (<LayersControl.BaseLayer  {...config}>
-									{
-										props.product === undefined
-											? <TileLayer {...config} />
-											: <WMSTileLayer layers={props.product.layer} url={OWS_URL} />
-									}
-								</LayersControl.BaseLayer>)
-								: (<LayersControl.BaseLayer {...config}>
-									{
-										props.product === undefined
-											? <TileLayer {...config} />
-											: <WMSTileLayer layers={props.product.layer} url={OWS_URL} />
-									}
-								</LayersControl.BaseLayer>)
+							(<LayersControl.BaseLayer {...config}>
+								{
+									props.product === undefined
+										? <TileLayer {...config} />
+										: <WMSTileLayer key={props.product.id} layers={props.product.layer} url={OWS_URL} />
+								}
+							</LayersControl.BaseLayer>)
 						)
 					})}
 				</LayersControl>
