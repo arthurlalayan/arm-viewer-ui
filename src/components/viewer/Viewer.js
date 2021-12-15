@@ -13,18 +13,18 @@ const mapConfigs = [
 	{ key: 6, name: 'Terrain', url: 'http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', subdomains: ['mt0', 'mt1', 'mt2', 'mt3'] }
 ]
 
-export default function Viewer(props) {
+export default function Viewer({center, zoom, product}) {
 	return (
 		<div className="Viewer">
-			<MapContainer center={props.center} zoom={props.zoom}>
+			<MapContainer center={center} zoom={zoom}>
 				<LayersControl position="topright">
 					{mapConfigs.map(config => {
 						return (
 							(<LayersControl.BaseLayer {...config}>
 								{
-									props.product === undefined
+									product === undefined
 										? <TileLayer {...config} />
-										: <WMSTileLayer key={props.product.id} layers={props.product.layer} url={OWS_URL} />
+										: <WMSTileLayer key={product.id} layers={product.layer} url={OWS_URL} />
 								}
 							</LayersControl.BaseLayer>)
 						)
