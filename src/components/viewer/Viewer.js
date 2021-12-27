@@ -1,7 +1,6 @@
 import 'leaflet/dist/leaflet.css';
 import React from "react";
 import { LayersControl, MapContainer, TileLayer, WMSTileLayer } from "react-leaflet";
-import { OWS_URL } from '../../features/geoserver/geoserverAPI';
 import './Viewer.css';
 
 const mapConfigs = [
@@ -13,7 +12,7 @@ const mapConfigs = [
 	{ key: 6, name: 'Terrain', url: 'http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', subdomains: ['mt0', 'mt1', 'mt2', 'mt3'] }
 ]
 
-export default function Viewer({center, zoom, product}) {
+export default function Viewer({ center, zoom, product }) {
 	return (
 		<div className="Viewer">
 			<MapContainer center={center} zoom={zoom}>
@@ -24,7 +23,7 @@ export default function Viewer({center, zoom, product}) {
 								{
 									product === undefined
 										? <TileLayer {...config} />
-										: <WMSTileLayer key={product.id} layers={product.layer} url={OWS_URL} />
+										: <WMSTileLayer key={product._id} layers={product.layer} url={process.env.REACT_APP_GEOSERVER_URL} />
 								}
 							</LayersControl.BaseLayer>)
 						)

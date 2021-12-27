@@ -22,8 +22,8 @@ export const sidebarSlice = createSlice({
     },
 })
 
-export const selectProduct = (state) => state.sidebarReducer.product;
-export const selectDocked = (state) => state.sidebarReducer.docked;
+export const selectProduct = (state) => state.sidebarSlice.product;
+export const selectDocked = (state) => state.sidebarSlice.docked;
 export const { changeProduct } = sidebarSlice.actions
 
 export default sidebarSlice.reducer
